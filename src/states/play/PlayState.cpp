@@ -1,6 +1,9 @@
 #include "PlayState.h"
 
-PlayState::PlayState(Game& game) : GameState(game) {
+PlayState::PlayState(Game& game, int width, int height)
+	: GameState(game)
+	, _width(width)
+	, _height(height) {
 	//ctor
 }
 

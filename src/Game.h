@@ -10,7 +10,7 @@
 
 class Game {
   public:
-	Game(unsigned width, unsigned height, std::string name);
+	Game(unsigned width, unsigned height, std::string name, std::string iconName);
 	~Game() = default;
 
 	void run ();

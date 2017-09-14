@@ -1,10 +1,13 @@
 #include "Game.h"
-#include "MainMenuState.h"
+#include "PlayState.h"
 #include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
 
 int main() {
-	Game game(1600, 900, "Hexpansion");
-	game.pushState<MainMenuState>(game);
+	Game game(1600, 900, "Hexpansion", "resources/icon_hexpansion.png");
+	game.pushState<PlayState>(game, 1000, 1000);
 	try {
 		game.run();
 	}
@@ -13,3 +16,5 @@ int main() {
 	}
 	return 0;
 }
+
+

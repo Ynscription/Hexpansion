@@ -1,12 +1,20 @@
+#include <iostream>
 #include "Game.h"
+
 
 constexpr unsigned TPS = 60;	//Ticks Per Second
 const sf::Time timePerUpdate = sf::seconds(1.f / float(TPS));
 
 
 //public:
-Game::Game(unsigned width, unsigned height, std::string name)
-	: _window ({width,height}, name) {} //initializes _window (RenderWindow)
+Game::Game(unsigned width, unsigned height, std::string name, std::string iconName)
+	: _window ({width,height}, name) {
+
+	sf::Image icon;
+	if (icon.loadFromFile(iconName)) {
+		_window.setIcon(256,256,icon.getPixelsPtr());
+	}
+}
 
 
 void Game::run() {
