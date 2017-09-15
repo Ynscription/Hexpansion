@@ -1,8 +1,8 @@
 #include "Game.h"
 #include "PlayState.h"
 #include <iostream>
-#include <cstdio>
-#include <cstdlib>
+//#include <cstdio>
+//#include <cstdlib>
 
 
 int main() {
@@ -11,7 +11,7 @@ int main() {
 	try {
 		game.run();
 	}
-	catch (const std::logic_error& e) {
+	catch (const std::exception& e) {
 		std::cerr << e.what();
 	}
 	return 0;
