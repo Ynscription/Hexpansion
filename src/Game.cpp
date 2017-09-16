@@ -68,6 +68,10 @@ void Game::setBGColor (sf::Color color) {
 	_bgColor = color;
 }
 
+void Game::setView (sf::View view) {
+	_window.setView(view);
+}
+
 //private:
 void Game::handleEvent() {
 	sf::Event e;

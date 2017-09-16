@@ -543,10 +543,10 @@
 
 1505214322 d:\sfml projects\hexpansion\src\util\nonmoveable.h
 
-1505557456 source:d:\code\c++\sfml projects\hexpansion\src\game.cpp
+1505561738 source:d:\code\c++\sfml projects\hexpansion\src\game.cpp
 	"Game.h"
 
-1505556593 d:\code\c++\sfml projects\hexpansion\src\game.h
+1505561707 d:\code\c++\sfml projects\hexpansion\src\game.h
 	<memory>
 	<vector>
 	<SFML/Graphics.hpp>
@@ -951,9 +951,10 @@
 	"Game.h"
 	"PlayState.h"
 
-1505506784 d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.h
+1505559768 d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.h
 	"GameState.h"
 	"Map.h"
+	"Camera.h"
 
 1505345550 source:d:\code\c++\sfml projects\hexpansion\src\resources\resourceholder.cpp
 	"ResourceHolder.h"
@@ -1080,7 +1081,7 @@
 1505214772 d:\code\c++\sfml projects\hexpansion\src\states\mainmenu\mainmenustate.h
 	"GameState.h"
 
-1505557920 source:d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.cpp
+1505561799 source:d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.cpp
 	"PlayState.h"
 	"Game.h"
 	"Hex.h"
@@ -1091,18 +1092,18 @@
 1505511714 d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvector.h
 	<SFML/Graphics.hpp>
 
-1505557377 source:d:\code\c++\sfml projects\hexpansion\src\states\play\hex.cpp
+1505558860 source:d:\code\c++\sfml projects\hexpansion\src\states\play\hex.cpp
 	"Hex.h"
 
 1505511636 d:\code\c++\sfml projects\hexpansion\src\states\play\hex.h
 	<SFML/Graphics.hpp>
 	"HexVector.h"
 
-1505557897 source:d:\code\c++\sfml projects\hexpansion\src\states\play\map.cpp
+1505559447 source:d:\code\c++\sfml projects\hexpansion\src\states\play\map.cpp
 	"Map.h"
 	"HexVectorRectGenerator.h"
 
-1505554911 d:\code\c++\sfml projects\hexpansion\src\states\play\map.h
+1505559530 d:\code\c++\sfml projects\hexpansion\src\states\play\map.h
 	<SFML/Graphics.hpp>
 	"Entity.h"
 	"HexHolder.h"
@@ -1125,9 +1126,12 @@
 1505558037 d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvectorrectgenerator.h
 	"HexVector.h"
 
-1505558274 source:d:\code\c++\sfml projects\hexpansion\src\engine\camera.cpp
+1505561974 source:d:\code\c++\sfml projects\hexpansion\src\engine\camera.cpp
 	"Camera.h"
+	<iostream>
+	<SFML/Graphics.hpp>
 
-1505558239 d:\code\c++\sfml projects\hexpansion\src\engine\camera.h
+1505562016 d:\code\c++\sfml projects\hexpansion\src\engine\camera.h
+	<SFML/Graphics.hpp>
 	"Entity.h"
 

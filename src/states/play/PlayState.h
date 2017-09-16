@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "Map.h"
+#include "Camera.h"
 
 class PlayState : public GameState {
   public:
@@ -19,7 +20,7 @@ class PlayState : public GameState {
 	int _width;
 	int _height;
 	Map _map;
-
+	Camera _camera;
 
 
 };

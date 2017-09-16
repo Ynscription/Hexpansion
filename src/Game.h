@@ -25,6 +25,8 @@ class Game {
 
 	void setBGColor (sf::Color color);
 
+	void setView (sf::View view);
+
   private:
 	sf::RenderWindow _window;
 	std::vector<std::unique_ptr<GameState>> _states; //owner vector of States

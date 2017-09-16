@@ -9,18 +9,23 @@
 class Camera : public Entity
 {
 	public:
-		Camera(sf::Vector2f windowSize);
-		Camera(float windW, float winH);
+		Camera(sf::Vector2u windowSize);
+		Camera(int windW, int winH);
 		~Camera();
 
 		void update (sf::Time deltaTime) override;
 		void fixedUpdate (sf::Time deltaTime) override;
 		void render (sf::RenderTarget& renderer) override;
 
-		void windowResized ();
+		void windowResized (unsigned int winW, unsigned int winH);
+
+		void setMoveSpeed (float moveSpeed);
+
+		sf::View& getView ();
 
 	private:
 		sf::View _view;
+		float _moveSpeed = 100;
 };
 
 #endif // CAMERA_H
