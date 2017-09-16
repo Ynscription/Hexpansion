@@ -4,7 +4,7 @@
 #include <memory>
 #include <unordered_map>
 
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 
 
 class Entity {
@@ -17,9 +17,6 @@ class Entity {
 	virtual void render (sf::RenderTarget& renderer) = 0;
 
 
-
-  private:
-    sf::Vector2f _position;
 
 };
 

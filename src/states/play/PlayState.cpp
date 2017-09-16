@@ -1,12 +1,17 @@
 #include "PlayState.h"
 
+
+#include "Game.h"
 #include "Hex.h"
 
 PlayState::PlayState(Game& game, int width, int height)
 	: GameState::GameState(game)
 	, _width(width)
-	, _height(height) {
-	//ctor
+	, _height(height)
+	, _map (width, height){
+
+	game.setBGColor(sf::Color{128, 0, 128});
+
 }
 
 
@@ -27,17 +32,15 @@ void PlayState::handleInput () {
 
 
 void PlayState::update (sf::Time deltaTime) {
-
+	_map.update(deltaTime);
 }
 
 
 void PlayState::fixedUpdate (sf::Time deltaTime) {
-
+	_map.fixedUpdate(deltaTime);
 }
 
 
 void PlayState::render (sf::RenderTarget& renderer) {
-	Hex testHex (0, 0);
-	sf::Vector2f pos (500, 500);
-	testHex.render(renderer, pos, 100);
+	_map.render(renderer);
 }

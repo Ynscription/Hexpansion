@@ -1,7 +1,7 @@
 #ifndef HEXVECTOR_H
 #define HEXVECTOR_H
 
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 
 struct HexVector {
 
@@ -9,6 +9,7 @@ struct HexVector {
 	int r = 0;
 
 	HexVector(int q, int r);
+	HexVector(const HexVector& other) : q(other.q), r(other.r) { }	//Copy ctor.
 	~HexVector();
 
 	HexVector& operator+=(const HexVector& rhs);

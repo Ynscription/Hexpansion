@@ -543,11 +543,10 @@
 
 1505214322 d:\sfml projects\hexpansion\src\util\nonmoveable.h
 
-1505347199 source:d:\code\c++\sfml projects\hexpansion\src\game.cpp
-	<iostream>
+1505557456 source:d:\code\c++\sfml projects\hexpansion\src\game.cpp
 	"Game.h"
 
-1505346644 d:\code\c++\sfml projects\hexpansion\src\game.h
+1505556593 d:\code\c++\sfml projects\hexpansion\src\game.h
 	<memory>
 	<vector>
 	<SFML/Graphics.hpp>
@@ -941,19 +940,20 @@
 	<string>
 	<vector>
 
-1505214933 d:\code\c++\sfml projects\hexpansion\src\states\gamestate.h
+1505500756 d:\code\c++\sfml projects\hexpansion\src\states\gamestate.h
 	<SFML/Graphics.hpp>
 	"NonCopyable.h"
 
 1505214283 d:\code\c++\sfml projects\hexpansion\src\util\noncopyable.h
 
-1505419189 source:d:\code\c++\sfml projects\hexpansion\src\main.cpp
+1505557392 source:d:\code\c++\sfml projects\hexpansion\src\main.cpp
+	<iostream>
 	"Game.h"
 	"PlayState.h"
-	<iostream>
 
-1505345926 d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.h
+1505506784 d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.h
 	"GameState.h"
+	"Map.h"
 
 1505345550 source:d:\code\c++\sfml projects\hexpansion\src\resources\resourceholder.cpp
 	"ResourceHolder.h"
@@ -1068,7 +1068,7 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1505344776 d:\code\c++\sfml projects\hexpansion\src\resources\resourcemanager.h
+1505500688 d:\code\c++\sfml projects\hexpansion\src\resources\resourcemanager.h
 	<unordered_map>
 	<string>
 
@@ -1080,31 +1080,54 @@
 1505214772 d:\code\c++\sfml projects\hexpansion\src\states\mainmenu\mainmenustate.h
 	"GameState.h"
 
-1505484479 source:d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.cpp
+1505557920 source:d:\code\c++\sfml projects\hexpansion\src\states\play\playstate.cpp
 	"PlayState.h"
+	"Game.h"
 	"Hex.h"
 
-1505483592 source:d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvector.cpp
+1505554799 source:d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvector.cpp
 	"HexVector.h"
 
-1505483360 d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvector.h
-	"SFML/Graphics.hpp"
+1505511714 d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvector.h
+	<SFML/Graphics.hpp>
 
-1505484072 source:d:\code\c++\sfml projects\hexpansion\src\states\play\hex.cpp
+1505557377 source:d:\code\c++\sfml projects\hexpansion\src\states\play\hex.cpp
 	"Hex.h"
 
-1505484034 d:\code\c++\sfml projects\hexpansion\src\states\play\hex.h
-	"SFML/Graphics.hpp"
+1505511636 d:\code\c++\sfml projects\hexpansion\src\states\play\hex.h
+	<SFML/Graphics.hpp>
 	"HexVector.h"
 
-1505479977 source:d:\code\c++\sfml projects\hexpansion\src\states\play\map.cpp
+1505557897 source:d:\code\c++\sfml projects\hexpansion\src\states\play\map.cpp
 	"Map.h"
+	"HexVectorRectGenerator.h"
 
-1505478969 d:\code\c++\sfml projects\hexpansion\src\states\play\map.h
-	<Entity.h>
+1505554911 d:\code\c++\sfml projects\hexpansion\src\states\play\map.h
+	<SFML/Graphics.hpp>
+	"Entity.h"
+	"HexHolder.h"
 
-1505466659 d:\code\c++\sfml projects\hexpansion\src\engine\entity.h
+1505558308 d:\code\c++\sfml projects\hexpansion\src\engine\entity.h
 	<memory>
 	<unordered_map>
-	"SFML/Graphics.hpp"
+	<SFML/Graphics.hpp>
+
+1505503188 source:d:\code\c++\sfml projects\hexpansion\src\states\play\hexholder.cpp
+	"HexHolder.h"
+
+1505513649 d:\code\c++\sfml projects\hexpansion\src\states\play\hexholder.h
+	<memory>
+	<unordered_map>
+	"Hex.h"
+	"HexVector.h"
+	"NonCopyable.h"
+
+1505558037 d:\code\c++\sfml projects\hexpansion\src\states\play\geometry\hexvectorrectgenerator.h
+	"HexVector.h"
+
+1505558274 source:d:\code\c++\sfml projects\hexpansion\src\engine\camera.cpp
+	"Camera.h"
+
+1505558239 d:\code\c++\sfml projects\hexpansion\src\engine\camera.h
+	"Entity.h"
 

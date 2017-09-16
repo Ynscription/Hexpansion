@@ -1,13 +1,17 @@
 #ifndef MAP_H
 #define MAP_H
 
-#include <Entity.h>
+#include <SFML/Graphics.hpp>
+
+#include "Entity.h"
+#include "HexHolder.h"
 
 
 class Map : public Entity
 {
 	public:
-		Map();
+		Map(int width, int height);
+		Map(const Map& other) = delete;
 		~Map();
 
 		void update (sf::Time deltaTime) override;
@@ -15,6 +19,12 @@ class Map : public Entity
 		void render (sf::RenderTarget& renderer) override;
 
 	private:
+		int _HEX_SIZE = 100;
+		int _width;
+		int _height;
+
+		HexHolder _hexes;
+
 
 };
 

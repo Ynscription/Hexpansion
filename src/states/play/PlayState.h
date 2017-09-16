@@ -2,6 +2,7 @@
 #define PLAY_H
 
 #include "GameState.h"
+#include "Map.h"
 
 class PlayState : public GameState {
   public:
@@ -17,6 +18,7 @@ class PlayState : public GameState {
   private:
 	int _width;
 	int _height;
+	Map _map;
 
 
 

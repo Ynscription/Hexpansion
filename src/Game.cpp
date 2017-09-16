@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Game.h"
+
 
 
 constexpr unsigned TPS = 60;	//Ticks Per Second
@@ -9,7 +9,7 @@ const sf::Time timePerUpdate = sf::seconds(1.f / float(TPS));
 //public:
 Game::Game(unsigned width, unsigned height, std::string name, std::string iconName)
 	: _window ({width,height}, name) {
-
+	_bgColor = sf::Color::White;
 	sf::Image icon;
 	if (icon.loadFromFile(iconName)) {
 		_window.setIcon(256,256,icon.getPixelsPtr());
@@ -38,12 +38,12 @@ void Game::run() {
 
 		//Fixed update
 		while (lag >= timePerUpdate) {
-			ticks++;
+			++ticks;
 			lag -= timePerUpdate;
 			state.fixedUpdate(timePerUpdate);
 		}
 
-		_window.clear();
+		_window.clear(_bgColor);
 		state.render(_window);
 		_window.display();
 
@@ -64,7 +64,9 @@ const sf::RenderWindow& Game::getWindow() const {
 	return _window;
 }
 
-
+void Game::setBGColor (sf::Color color) {
+	_bgColor = color;
+}
 
 //private:
 void Game::handleEvent() {

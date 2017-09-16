@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <vector>
+
 #include <SFML/Graphics.hpp>
 
 #include "GameState.h"
@@ -22,9 +23,12 @@ class Game {
 
 	const sf::RenderWindow& getWindow() const;	//returns a <reference> (not a copy) to the render window
 
+	void setBGColor (sf::Color color);
+
   private:
 	sf::RenderWindow _window;
 	std::vector<std::unique_ptr<GameState>> _states; //owner vector of States
+	sf::Color _bgColor;
 
 
 

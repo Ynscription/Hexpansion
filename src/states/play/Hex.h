@@ -1,7 +1,8 @@
 #ifndef HEX_H
 #define HEX_H
 
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
+
 #include "HexVector.h"
 
 
@@ -11,6 +12,7 @@ class Hex {
 
 	Hex(int q, int r);
 	Hex(HexVector coords);
+	Hex(const Hex& other) = delete;
 	~Hex();
 
 	HexVector getNeighbour (int dir);	//For mor info on dir -> HexVector.h
@@ -19,7 +21,7 @@ class Hex {
 	void setHovered(bool val);
 	void setSelected (bool val);
 
-	void render (sf::RenderTarget& renderer, sf::Vector2f& position, int size);
+	void render (sf::RenderTarget& renderer, sf::Vector2f position, int size);
 
   private:
   	const sf::Color NORMAL_COLOR 	= sf::Color::White;

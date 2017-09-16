@@ -2,6 +2,7 @@
 #define STATEBASE_H
 
 #include <SFML/Graphics.hpp>
+
 #include "NonCopyable.h"
 
 class Game;

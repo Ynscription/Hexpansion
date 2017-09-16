@@ -106,12 +106,15 @@
 		<Unit filename="src/states/mainMenu/MainMenuState.h" />
 		<Unit filename="src/states/play/Hex.cpp" />
 		<Unit filename="src/states/play/Hex.h" />
+		<Unit filename="src/states/play/HexHolder.cpp" />
+		<Unit filename="src/states/play/HexHolder.h" />
 		<Unit filename="src/states/play/Map.cpp" />
 		<Unit filename="src/states/play/Map.h" />
 		<Unit filename="src/states/play/PlayState.cpp" />
 		<Unit filename="src/states/play/PlayState.h" />
 		<Unit filename="src/states/play/geometry/HexVector.cpp" />
 		<Unit filename="src/states/play/geometry/HexVector.h" />
+		<Unit filename="src/states/play/geometry/HexVectorRectGenerator.h" />
 		<Unit filename="src/util/NonCopyable.h" />
 		<Unit filename="src/util/NonMoveable.h" />
 		<Unit filename="src/util/Random.h" />

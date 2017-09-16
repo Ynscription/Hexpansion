@@ -25,8 +25,8 @@ HexVector HexVector::cubeToAxial (const sf::Vector3<int>& cube){
 
 //Transforms the coordinates of a hex to coordinates on screen, requires de size of a side of the hex
 sf::Vector2f HexVector::hexToPixel (const HexVector& hex, int size) {
-	auto x = size * ThreeHalfs * hex.q;
-	auto y = size * sqrtThree * (hex.r + hex.q/2);
+	float x = float(size) * ThreeHalfs * float(hex.q);
+	float y = float(size) * sqrtThree * (float(hex.r) + float(hex.q)/2.f);
 	return sf::Vector2f(x, y);
 }
 HexVector HexVector::pixelToHex	(const sf::Vector2f& pixel, int size) {

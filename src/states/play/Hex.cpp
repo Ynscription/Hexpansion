@@ -6,13 +6,13 @@ constexpr float piThirds = pi/3.f;
 
 Hex::Hex(HexVector ccoords) : coords(ccoords) {
 	_hexagon.setPointCount(6);
-	_hexagon.setOutlineThickness(-5);
+	_hexagon.setOutlineThickness(1);
 	_hexagon.setOutlineColor(sf::Color::Black);
 }
 
 Hex::Hex(int q, int r) : coords(q, r) {
 	_hexagon.setPointCount(6);
-	_hexagon.setOutlineThickness(-5);
+	_hexagon.setOutlineThickness(1);
 	_hexagon.setOutlineColor(sf::Color::Black);
 }
 
@@ -67,19 +67,19 @@ sf::Vector2f Hex::hexCorner(int size, int i) {
 }
 
 void Hex::setVertices(int size) {
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 6; ++i) {
 		_hexagon.setPoint(i, hexCorner(size, i));
 	}
 }
 
-void Hex::render (sf::RenderTarget& renderer, sf::Vector2f& position, int size) {
-    sf::Transform trans;
-    trans.translate(position);
+void Hex::render (sf::RenderTarget& renderer, sf::Vector2f position, int size) {
+    //sf::Transform trans;
+    //trans.translate(position);
 
     if (_zeroSize != size)
 		setVertices(size);
-
-    renderer.draw(_hexagon, trans);
+	_hexagon.setPosition(position);
+    renderer.draw(_hexagon);
 }
 
 

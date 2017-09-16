@@ -1,13 +1,14 @@
+#include <iostream>
+//#include <cstdlib>
+
 #include "Game.h"
 #include "PlayState.h"
-#include <iostream>
-//#include <cstdio>
-//#include <cstdlib>
 
 
 int main() {
+
 	Game game(1600, 900, "Hexpansion", "resources/icon_hexpansion.png");
-	game.pushState<PlayState>(game, 1000, 1000);
+	game.pushState<PlayState>(game, 100, 40);
 	try {
 		game.run();
 	}
