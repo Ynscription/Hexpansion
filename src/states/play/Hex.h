@@ -32,7 +32,6 @@ class Hex {
 
 	bool _isHovered = false;
 	bool _isSelected = false;
-	sf::Color _currentColor;
 	int _zeroSize = -1;
 
 	void setColor ();

@@ -10,9 +10,11 @@
 class Map : public Entity
 {
 	public:
-		Map(int width, int height);
+		Map(int width, int height, sf::RenderWindow& window);
 		Map(const Map& other) = delete;
 		~Map();
+
+		void mouseClicked (int x, int y);
 
 		void update (sf::Time deltaTime) override;
 		void fixedUpdate (sf::Time deltaTime) override;
@@ -23,6 +25,10 @@ class Map : public Entity
 		int _width;
 		int _height;
 
+		sf::RenderWindow& _window;
+
+		Hex* _hoveredHex = nullptr;
+		Hex* _selectedHex = nullptr;
 		HexHolder _hexes;
 
 

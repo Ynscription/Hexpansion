@@ -60,7 +60,7 @@ void Game::popState() {
 }
 
 
-const sf::RenderWindow& Game::getWindow() const {
+sf::RenderWindow& Game::getWindow() {
 	return _window;
 }
 
@@ -68,16 +68,13 @@ void Game::setBGColor (sf::Color color) {
 	_bgColor = color;
 }
 
-void Game::setView (sf::View view) {
-	_window.setView(view);
-}
 
 //private:
 void Game::handleEvent() {
 	sf::Event e;
-
+	GameState& state = getCurrentState();
 	while (_window.pollEvent(e)) {
-
+		state.handleEvent(e);
 		switch (e.type) {
 		case sf::Event::Closed:
 			_window.close();

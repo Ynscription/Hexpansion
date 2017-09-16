@@ -31,7 +31,7 @@ class HexVectorRectGenerator
 
 
 		HexVector get() {
-			int diff = int(_q/2);
+			int diff = int((_q - _stopQ)/2);
 			return HexVector(_q, _r - diff);
 		}
 

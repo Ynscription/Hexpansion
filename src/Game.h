@@ -21,11 +21,9 @@ class Game {
 
 	void popState();
 
-	const sf::RenderWindow& getWindow() const;	//returns a <reference> (not a copy) to the render window
+	sf::RenderWindow& getWindow();	//returns a <reference> (not a copy) to the render window
 
 	void setBGColor (sf::Color color);
-
-	void setView (sf::View view);
 
   private:
 	sf::RenderWindow _window;

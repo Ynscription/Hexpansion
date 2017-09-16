@@ -8,7 +8,7 @@ PlayState::PlayState(Game& game, int width, int height)
 	: GameState::GameState(game)
 	, _width(width)
 	, _height(height)
-	, _map (width, height)
+	, _map (width, height, game.getWindow())
 	, _camera (game.getWindow().getSize()) {
 	game.setBGColor(sf::Color{128, 0, 128});
 
@@ -24,6 +24,11 @@ PlayState::~PlayState()
 void PlayState::handleEvent (sf::Event e){
 	if (e.type == sf::Event::Resized) {
 		_camera.windowResized(e.size.width, e.size.height);
+	}
+	if (e.type == sf::Event::MouseButtonPressed) {
+		if (e.mouseButton.button == sf::Mouse::Left) {
+			_map.mouseClicked (e.mouseButton.x, e.mouseButton.y);
+		}
 	}
 }
 

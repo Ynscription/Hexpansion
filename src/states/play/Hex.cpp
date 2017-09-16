@@ -40,12 +40,12 @@ int Hex::getDistanceTo (const Hex& other) {
 ///Modify hex
 void Hex::setColor() {
 	if (_isSelected) {
-		_currentColor = SELECTED_COLOR;
+		_hexagon.setFillColor(SELECTED_COLOR);
 	}else {
 		if (_isHovered) {
-			_currentColor = HOVERED_COLOR;
+			_hexagon.setFillColor(HOVERED_COLOR);
 		}else {
-			_currentColor = NORMAL_COLOR;
+			_hexagon.setFillColor(NORMAL_COLOR);
 		}
 	}
 }

@@ -22,9 +22,9 @@ struct HexVector {
 	static sf::Vector3<int> axialToCube (const HexVector& hex);
 	static HexVector cubeToAxial (const sf::Vector3<int>& cube);
 
-	//Round hex takes a Vector2f where (x = q, y = r), that represents a decimal hex coordinate
+	//Round hex takes a Vector2f where (x = q, y = r), that represents a fractional hex coordinate
 	//and returns a valid HexVector
-	static HexVector roundHex (const sf::Vector2f& decHex);
+	static HexVector roundHex (const sf::Vector2f& fracHex);
 
 	//Transforms the coordinates of a hex to coordinates on screen, requires de size of a side of the hex
 	static sf::Vector2f hexToPixel (const HexVector& hex, int size);

@@ -31,14 +31,28 @@ sf::Vector2f HexVector::hexToPixel (const HexVector& hex, int size) {
 }
 HexVector HexVector::pixelToHex	(const sf::Vector2f& pixel, int size) {
 	float q = ((pixel.x * TwoThirds) / float(size));
-    float r = ((((sqrtThree - pixel.x)/3.f) * pixel.y) / float(size));
-    return (roundHex(sf::Vector2f(q, r)));
+    float r = (((sqrtThree*pixel.y - pixel.x)/3.f) / float(size));
+    return roundHex(sf::Vector2f(q, r));
 }
 
 //Round hex takes a Vector2f where (x = q, y = r), that represents a decimal hex coordinate
 //and returns a valid HexVector
-HexVector HexVector::roundHex (const sf::Vector2f& decHex) {
-	return  HexVector(0,0);
+HexVector HexVector::roundHex (const sf::Vector2f& fracHex) {
+	float y = -fracHex.x - fracHex.y;
+	int rx = std::round(fracHex.x);
+	int ry = std::round(y);
+	int rz = std::round(fracHex.y);
+
+	float x_diff = std::abs(rx - fracHex.x);
+	float y_diff = std::abs(ry - y);
+	float z_diff = std::abs(rz - fracHex.y);
+
+	if ((x_diff > y_diff) && (x_diff > z_diff)) {
+		rx = -ry - rz;
+	}else if (y_diff <= z_diff) {
+		rz = -rx - ry;;
+	}
+	return  HexVector(rx, rz);
 }
 
 

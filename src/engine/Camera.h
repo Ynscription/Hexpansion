@@ -25,7 +25,7 @@ class Camera : public Entity
 
 	private:
 		sf::View _view;
-		float _moveSpeed = 100;
+		float _moveSpeed = 500;
 };
 
 #endif // CAMERA_H
