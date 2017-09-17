@@ -53,6 +53,9 @@ void Game::run() {
 	}
 }
 
+void Game::close() {
+	_window.close();
+}
 
 
 void Game::popState() {
@@ -75,7 +78,7 @@ void Game::handleEvent() {
 	GameState& state = getCurrentState();
 	while (_window.pollEvent(e)) {
 		state.handleEvent(e);
-		switch (e.type) {
+		/*switch (e.type) {
 		case sf::Event::Closed:
 			_window.close();
 			break;
@@ -83,7 +86,7 @@ void Game::handleEvent() {
 		default:
 			break;
 
-		}
+		}*/
 	}
 }
 

@@ -8,7 +8,7 @@ class MainMenuState : public GameState {
 	MainMenuState(Game& game);
 	~MainMenuState();
 
-	void handleEvent (sf::Event e) override;
+	void handleEvent (const sf::Event& e) override;
 	void handleInput () override;
 	void update (sf::Time deltaTime) override;
 	void fixedUpdate (sf::Time deltaTime) override;

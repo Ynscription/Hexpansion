@@ -21,14 +21,18 @@ PlayState::~PlayState()
 }
 
 
-void PlayState::handleEvent (sf::Event e){
+void PlayState::handleEvent (const sf::Event& e){
+	if (e.type == sf::Event::Closed) {
+		GameState::_pGame->close();
+	}
 	if (e.type == sf::Event::Resized) {
-		_camera.windowResized(e.size.width, e.size.height);
+		_camera.handleEvent(e);
+	}
+	if (e.type == sf::Event::MouseWheelScrolled) {
+		_camera.handleEvent(e);
 	}
 	if (e.type == sf::Event::MouseButtonPressed) {
-		if (e.mouseButton.button == sf::Mouse::Left) {
-			_map.mouseClicked (e.mouseButton.x, e.mouseButton.y);
-		}
+		_map.handleEvent(e);
 	}
 }
 

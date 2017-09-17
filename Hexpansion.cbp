@@ -96,6 +96,8 @@
 		<Unit filename="sfml-window-d-2.dll" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/Game.h" />
+		<Unit filename="src/engine/Camera.cpp" />
+		<Unit filename="src/engine/Camera.h" />
 		<Unit filename="src/engine/Entity.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/resources/ResourceHolder.cpp" />

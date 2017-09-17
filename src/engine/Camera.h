@@ -13,6 +13,8 @@ class Camera : public Entity
 		Camera(int windW, int winH);
 		~Camera();
 
+		void handleEvent (const sf::Event& e) override;
+
 		void update (sf::Time deltaTime) override;
 		void fixedUpdate (sf::Time deltaTime) override;
 		void render (sf::RenderTarget& renderer) override;
@@ -26,6 +28,11 @@ class Camera : public Entity
 	private:
 		sf::View _view;
 		float _moveSpeed = 500;
+		sf::Vector2u _windowSize;
+		sf::Vector2f _currentSize;
+
+		sf::Vector2f zoom (sf::Vector2f& size, float zoom);
+		void resetZoom();
 };
 
 #endif // CAMERA_H

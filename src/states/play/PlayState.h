@@ -10,7 +10,7 @@ class PlayState : public GameState {
 	PlayState(Game& game, int width, int height);
 	~PlayState();
 
-	void handleEvent (sf::Event e) override;
+	void handleEvent (const sf::Event& e) override;
 	void handleInput () override;
 	void update (sf::Time deltaTime) override;
 	void fixedUpdate (sf::Time deltaTime) override;

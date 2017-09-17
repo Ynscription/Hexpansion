@@ -16,6 +16,8 @@ class Game {
 
 	void run ();
 
+	void close ();
+
 	template<typename T, typename... Args> //<Variadic template>, Args is some amount of arguments
 	void pushState (Args&&... args);	//Pass some amount of args as rvalue reference
 

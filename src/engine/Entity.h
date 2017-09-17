@@ -12,6 +12,7 @@ class Entity {
 	Entity() = default;
 	virtual ~Entity() = default;
 
+	virtual void handleEvent (const sf::Event& e) = 0;
 	virtual void update (sf::Time deltaTime) = 0;
 	virtual void fixedUpdate (sf::Time deltaTime) = 0;
 	virtual void render (sf::RenderTarget& renderer) = 0;

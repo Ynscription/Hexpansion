@@ -14,7 +14,9 @@ class Map : public Entity
 		Map(const Map& other) = delete;
 		~Map();
 
-		void mouseClicked (int x, int y);
+		//void mouseClicked (int x, int y);
+
+		void handleEvent(const sf::Event& e) override;
 
 		void update (sf::Time deltaTime) override;
 		void fixedUpdate (sf::Time deltaTime) override;

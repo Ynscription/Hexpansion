@@ -9,7 +9,7 @@ MainMenuState::~MainMenuState() {
 }
 
 
-void MainMenuState::handleEvent (sf::Event e){
+void MainMenuState::handleEvent (const sf::Event& e){
 
 }
 

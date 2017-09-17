@@ -6,13 +6,13 @@ constexpr float piThirds = pi/3.f;
 
 Hex::Hex(HexVector ccoords) : coords(ccoords) {
 	_hexagon.setPointCount(6);
-	_hexagon.setOutlineThickness(1);
+	_hexagon.setOutlineThickness(-3);
 	_hexagon.setOutlineColor(sf::Color::Black);
 }
 
 Hex::Hex(int q, int r) : coords(q, r) {
 	_hexagon.setPointCount(6);
-	_hexagon.setOutlineThickness(1);
+	_hexagon.setOutlineThickness(-3);
 	_hexagon.setOutlineColor(sf::Color::Black);
 }
 

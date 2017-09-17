@@ -1,6 +1,5 @@
 #include "Map.h"
 
-
 #include "HexVectorRectGenerator.h"
 
 
@@ -18,17 +17,21 @@ Map::~Map()
 	//dtor
 }
 
-void Map::mouseClicked (int x, int y) {
-	sf::Vector2f worldPos = _window.mapPixelToCoords(sf::Vector2i(x, y));
-	HexVector selectedCoords = HexVector::pixelToHex(worldPos, _HEX_SIZE);
-	Hex* selectedHex = _hexes.getHex(selectedCoords);
-	if (_selectedHex != selectedHex) {
-		if (_selectedHex != nullptr) {
-			_selectedHex->setSelected(false);
-		}
-		_selectedHex = selectedHex;
-		if (_selectedHex != nullptr) {
-			_selectedHex->setSelected(true);
+void Map::handleEvent(const sf::Event& e) {
+	if (e.type == sf::Event::MouseButtonPressed && e.mouseButton.button == sf::Mouse::Left) {
+		int x = e.mouseButton.x;
+		int y = e.mouseButton.y;
+		sf::Vector2f worldPos = _window.mapPixelToCoords(sf::Vector2i(x, y));
+		HexVector selectedCoords = HexVector::pixelToHex(worldPos, _HEX_SIZE);
+		Hex* selectedHex = _hexes.getHex(selectedCoords);
+		if (_selectedHex != selectedHex) {
+			if (_selectedHex != nullptr) {
+				_selectedHex->setSelected(false);
+			}
+			_selectedHex = selectedHex;
+			if (_selectedHex != nullptr) {
+				_selectedHex->setSelected(true);
+			}
 		}
 	}
 }
@@ -65,16 +68,17 @@ void Map::render (sf::RenderTarget& renderer) {
 	vSize.x = 0;
 	HexVector endingR = HexVector::pixelToHex(vSize, _HEX_SIZE);
 	origin.q -= 1;
-	endingQ.q += 2;
+	endingQ.q += 3;
 	origin.r -= 1;
 	//TODO there should be a better way
 	endingR.r += 4;
-
+	int i = 0;
 	for (HexVectorRectGenerator rectGen (origin, endingQ.q, endingR.r); !rectGen.isOOB(); ++rectGen) {
 		hex = _hexes.getHex(rectGen.get());
 		if (hex != nullptr) {
 			hex->render(renderer, HexVector::hexToPixel(hex->coords, _HEX_SIZE), _HEX_SIZE);
 		}
+		i++;
 	}
 }
 
